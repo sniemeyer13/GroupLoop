@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	
+<style id="__web-inspector-hide-shortcut-style__" type="text/css">
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after
+{
+    visibility: hidden !important;
+}
+</style></head>
+<body style="margin: 0px;">
+	<div id="mainView" style="
+	    height: 620px;
+	    width: 330px;
+	    ">
+		<input type="text" id="groupName" style="
+		    background-color: rgba(33, 150, 243, 0.29);
+		    border-style: dotted;
+		    border-width: 5px;
+		    border-color: darkmagenta;
+		    height: 7%;
+		    width: 93%;
+		    left: 2%;
+		    top: 2%;
+		    position: absolute;
+		    font-family: fantasy;
+		    font-size: x-large;
+		    font-weight: 500;
+		    font-style: italic;
+		    " placeholder="Group Name">
+		<input type="button" id="save" style="
+		    width: 25%;
+		    position: absolute;
+		    left: 5%;
+		    top: 95%;
+		    font-family: fantasy;
+		    "> Save 
+		<input type="button" id="play" style="
+		    width: 50px;
+		    position: fixed;
+		    left: 70%;
+		    top: 95%;
+		    height: 150px !important;
+		    /* display: block !important; */
+		    " class=""> Play 
+		<canvas id="localBand" style="
+		    left: 10px;
+		    height: 75%;
+		    position: absolute;
+		    width: 50%;
+		    top: 13%;
+		    "></canvas>
+		<canvas id="globalBand" style="
+			left: 73%;
+			top: 13%;
+			width: 25%;
+			height: 75%;
+			position: absolute;
+		"></canvas>
+	</div>
+	<script>
+		var localBand = document.getElementById("localBand");
+		var globalBand = document.getElementById("globalBand");
+
+		var ctx = localBand.getContext("2d");
+
+		var grd=ctx.createLinearGradient(0,0,170,0);
+		grd.addColorStop(0,"black");
+		grd.addColorStop(1,"purple");
+		ctx.fillStyle=grd;
+		ctx.fillRect(0,0, ctx.canvas.width, ctx.canvas.height);
+
+		var ctx2 = globalBand.getContext("2d");
+		ctx2.fillStyle = "blue";
+		ctx2.fillRect(0,0, ctx.canvas.width, ctx.canvas.height);
+	</script> 
+
+</body></html>
